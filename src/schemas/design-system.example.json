@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "name": "Field Notes",
+  "purpose": "A quiet operational interface for reviewing field observations and resolving follow-up work.",
+  "colors": {
+    "ink": { "value": "#18211F", "purpose": "Primary text", "contrastAgainst": "paper" },
+    "mutedInk": { "value": "#5E6B66", "purpose": "Secondary text", "contrastAgainst": "paper" },
+    "paper": { "value": "#F5F2EA", "purpose": "Page background" },
+    "surface": { "value": "#FFFDF8", "purpose": "Raised surface" },
+    "line": { "value": "#D8D4C9", "purpose": "Structural divider" },
+    "signal": { "value": "#B64D32", "purpose": "Primary action and urgent state", "contrastAgainst": "paper" },
+    "success": { "value": "#2E6B54", "purpose": "Confirmed or complete state", "contrastAgainst": "paper" }
+  },
+  "typography": {
+    "fontFamily": "'DM Sans', sans-serif",
+    "scale": {
+      "display": { "fontSize": "2.5rem", "lineHeight": 1.05, "fontWeight": 700 },
+      "heading": { "fontSize": "1.5rem", "lineHeight": 1.15, "fontWeight": 700 },
+      "body": { "fontSize": "1rem", "lineHeight": 1.5, "fontWeight": 400 },
+      "small": { "fontSize": "0.8125rem", "lineHeight": 1.35, "fontWeight": 500 }
+    }
+  },
+  "spacing": {
+    "xs": "0.25rem",
+    "sm": "0.5rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "xl": "2.5rem",
+    "section": "4rem"
+  },
+  "radii": {
+    "none": "0px",
+    "control": "4px",
+    "panel": "8px"
+  },
+  "density": {
+    "maxVisibleActions": 2,
+    "maxBadgesPerRow": 2,
+    "maxTextLinesInSummary": 3,
+    "maxInteractiveElementsPerRegion": 5
+  },
+  "components": {
+    "button": {
+      "allowedVariants": ["primary", "secondary", "quiet"],
+      "requiredStates": ["default", "hover", "focus-visible", "disabled", "loading"],
+      "rules": [
+        "Use one primary button per region.",
+        "Do not add an icon unless it communicates an action that text cannot communicate.",
+        "Do not use tooltips to explain a text button."
+      ]
+    },
+    "badge": {
+      "allowedVariants": ["neutral", "signal", "success"],
+      "requiredStates": ["default"],
+      "rules": [
+        "Use only for a compact status that is useful during scanning.",
+        "Never repeat information already present in adjacent text.",
+        "Maximum two badges in a row."
+      ]
+    },
+    "panel": {
+      "allowedVariants": ["default", "inset"],
+      "requiredStates": ["default", "loading", "empty", "error"],
+      "rules": [
+        "Use borders only when they clarify grouping or interaction.",
+        "Do not nest panels inside panels."
+      ]
+    }
+  }
+}
