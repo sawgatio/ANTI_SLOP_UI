@@ -3,13 +3,13 @@
   "name": "Field Notes",
   "purpose": "A quiet operational interface for reviewing field observations and resolving follow-up work.",
   "colors": {
-    "ink": { "value": "#18211F", "purpose": "Primary text", "contrastAgainst": "paper" },
-    "mutedInk": { "value": "#5E6B66", "purpose": "Secondary text", "contrastAgainst": "paper" },
-    "paper": { "value": "#F5F2EA", "purpose": "Page background" },
-    "surface": { "value": "#FFFDF8", "purpose": "Raised surface" },
-    "line": { "value": "#D8D4C9", "purpose": "Structural divider" },
-    "signal": { "value": "#B64D32", "purpose": "Primary action and urgent state", "contrastAgainst": "paper" },
-    "success": { "value": "#2E6B54", "purpose": "Confirmed or complete state", "contrastAgainst": "paper" }
+    "text-primary": { "value": "#18211F", "purpose": "Primary text", "contrastAgainst": "bg-page" },
+    "text-surface-muted": { "value": "#5E6B66", "purpose": "Secondary text", "contrastAgainst": "bg-page" },
+    "bg-page": { "value": "#F5F2EA", "purpose": "Page background" },
+    "bg-surface": { "value": "#FFFDF8", "purpose": "Raised surface" },
+    "border-card-subtle": { "value": "#D8D4C9", "purpose": "Structural divider" },
+    "bg-brand-primary": { "value": "#B64D32", "purpose": "Primary action and urgent state", "contrastAgainst": "bg-page" },
+    "text-success": { "value": "#2E6B54", "purpose": "Confirmed or complete state", "contrastAgainst": "bg-page" }
   },
   "typography": {
     "fontFamily": "'DM Sans', sans-serif",
@@ -39,6 +39,13 @@
     "maxTextLinesInSummary": 3,
     "maxInteractiveElementsPerRegion": 5
   },
+  "forbiddenUtilities": [
+    "arbitrary color values",
+    "arbitrary spacing values",
+    "gradient backgrounds",
+    "rounded-full on rectangular controls",
+    "utility classes outside the token map"
+  ],
   "components": {
     "button": {
       "allowedVariants": ["primary", "secondary", "quiet"],

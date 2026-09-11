@@ -5,7 +5,7 @@
   "description": "A strict design-system contract injected into UI-generation prompts.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["version", "name", "purpose", "colors", "typography", "spacing", "density", "components"],
+  "required": ["version", "name", "purpose", "colors", "typography", "spacing", "density", "forbiddenUtilities", "components"],
   "properties": {
     "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
     "name": { "type": "string", "minLength": 1 },
@@ -48,6 +48,11 @@
         "maxInteractiveElementsPerRegion": { "type": "integer", "minimum": 1 }
       }
     },
+    "forbiddenUtilities": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
     "components": {
       "type": "object",
       "additionalProperties": { "$ref": "#/$defs/componentContract" },
@@ -86,7 +91,7 @@
       "required": ["allowedVariants", "requiredStates", "rules"],
       "properties": {
         "allowedVariants": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-        "requiredStates": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "requiredStates": { "type": "array", "items": { "enum": ["default", "hover", "active", "focus-visible", "disabled", "loading", "error", "empty"] }, "uniqueItems": true, "minItems": 1 },
         "rules": { "type": "array", "items": { "type": "string", "minLength": 1 } }
       }
     }
